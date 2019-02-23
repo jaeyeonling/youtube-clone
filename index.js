@@ -16,6 +16,13 @@ const profileHandler = (req, res) => {
   res.send('Hello from profile')
 }
 
+const loggingMiddleware = (req, res, next) => {
+  console.log("I'm middleware")
+  next()
+}
+
+app.use(loggingMiddleware)
+
 app.get('/', homeHandler)
 app.get('/profile', profileHandler)
 
