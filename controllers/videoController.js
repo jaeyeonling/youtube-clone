@@ -1,4 +1,4 @@
-export const home = (req, res) => res.send("Home")
+export const home = (req, res) => res.render("home")
 export const search = (req, res) => res.send("Search")
 
 export const videos = (req, res) => res.send("Search")
