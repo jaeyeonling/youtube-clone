@@ -1,0 +1,16 @@
+{
+  "name": "youtube-clone",
+  "version": "0.0.1",
+  "description": "cloning youtube with nodejs",
+  "main": "index.js",
+  "repository": "github.com/jaeyeonling/youtube-clone",
+  "author": "Jaeyeon Kim<jaeyeonling@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "yarn": "^1.13.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
