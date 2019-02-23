@@ -7,6 +7,9 @@
   "author": "Jaeyeon Kim<jaeyeonling@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "node index.js"
+  },
   "devDependencies": {
     "yarn": "^1.13.0"
   },
