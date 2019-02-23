@@ -1,4 +1,5 @@
 import express from 'express'
+import morgan from 'morgan'
 
 const app = express()
 
@@ -16,12 +17,7 @@ const profileHandler = (req, res) => {
   res.send('Hello from profile')
 }
 
-const loggingMiddleware = (req, res, next) => {
-  console.log("I'm middleware")
-  next()
-}
-
-app.use(loggingMiddleware)
+app.use(morgan("dev"))
 
 app.get('/', homeHandler)
 app.get('/profile', profileHandler)
