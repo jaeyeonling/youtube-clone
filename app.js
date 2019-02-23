@@ -6,12 +6,6 @@ import bodyParser from 'body-parser'
 
 const app = express()
 
-const PORT = 4000
-
-const listenHandler = () => {
-  console.log(`Listening on: http://localhost:${PORT}`)
-}
-
 const homeHandler = (req, res) => {
   res.send('Hello from home')
 }
@@ -29,4 +23,4 @@ app.use(morgan("dev"))
 app.get('/', homeHandler)
 app.get('/profile', profileHandler)
 
-app.listen(PORT, listenHandler)
+export default app
