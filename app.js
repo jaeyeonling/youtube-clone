@@ -17,7 +17,7 @@ app.use(helmet())
 app.use(morgan("dev"))
 
 app.use('/', globalRouter)
-app.use('/user', userRouter)
-app.use('/video', videoRouter)
+app.use('/users', userRouter)
+app.use('/videos', videoRouter)
 
 export default app
