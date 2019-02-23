@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon --exec babel-node index.js --delay 2"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
