@@ -1,5 +1,6 @@
 import express from 'express'
 import morgan from 'morgan'
+import helmet from 'helmet'
 
 const app = express()
 
@@ -18,6 +19,7 @@ const profileHandler = (req, res) => {
 }
 
 app.use(morgan("dev"))
+app.use(helmet())
 
 app.get('/', homeHandler)
 app.get('/profile', profileHandler)
