@@ -4,7 +4,7 @@ export const videos = [
     title: 'Video awesome',
     description: 'This is something I love',
     views: 10,
-    videoFile: 'https://archive.org/details/BigBuckBunny_124',
+    videoFile: 'https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4',
     creator: {
       id: 1,
       name: 'Jaeyeon Kim',
@@ -16,7 +16,7 @@ export const videos = [
     title: 'Video nice',
     description: 'This is something I love',
     views: 11,
-    videoFile: 'https://archive.org/details/BigBuckBunny_124',
+    videoFile: 'https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4',
     creator: {
       id: 1,
       name: 'Jaeyeon Kim',
@@ -28,7 +28,7 @@ export const videos = [
     title: 'Video perfact',
     description: 'This is something I love',
     views: 1213,
-    videoFile: 'https://archive.org/details/BigBuckBunny_124',
+    videoFile: 'https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4',
     creator: {
       id: 1,
       name: 'Jaeyeon Kim',
@@ -40,7 +40,7 @@ export const videos = [
     title: 'Video very',
     description: 'This is something I love',
     views: 124,
-    videoFile: 'https://archive.org/details/BigBuckBunny_124',
+    videoFile: 'https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4',
     creator: {
       id: 1,
       name: 'Jaeyeon Kim',
