@@ -8,7 +8,7 @@ Cloning youtube with node.js
 - [X] Login
 - [X] Search
 - [ ] User Detail
-- [ ] Edit Profile
+- [X] Edit Profile
 - [ ] Change Password
 - [ ] Upload
 - [ ] Video Detail
