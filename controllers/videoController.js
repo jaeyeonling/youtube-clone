@@ -1,4 +1,11 @@
-export const home = (req, res) => res.render('home', { pageTitle: 'Home' })
+import { videos } from '../db'
+
+export const home = (req, res) => {
+  res.render('home', { 
+    pageTitle: 'Home', 
+    videos,
+  })
+}
 
 export const search = (req, res) => {
   const {
@@ -16,7 +23,6 @@ export const search = (req, res) => {
 }
 
 
-export const videos = (req, res) => res.send('Search')
 export const upload = (req, res) => res.send('Search')
 export const videoDetail = (req, res) => res.send('Search')
 export const editVideo = (req, res) => res.send('Search')
