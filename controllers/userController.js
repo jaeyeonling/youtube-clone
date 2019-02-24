@@ -4,5 +4,5 @@ export const logout = (req, res) => res.send('Logout')
 
 export const users = (req, res) => res.send('Logout')
 export const userDetails = (req, res) => res.send('Logout')
-export const editProfile = (req, res) => res.send('Logout')
+export const editProfile = (req, res) => res.render('editProfile', { pageTitle: 'Edit Profile' })
 export const changePassword = (req, res) => res.send('Logout')
