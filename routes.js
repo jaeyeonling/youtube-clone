@@ -8,7 +8,7 @@ const search = '/search'
 // Users
 const users = '/users'
 const userDetails = '/:userId'
-const editProfile = 'edit-profile'
+const editProfile = '/edit-profile'
 const changePassword = '/change-password'
 
 // Videos
