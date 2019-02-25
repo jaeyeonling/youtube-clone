@@ -27,7 +27,11 @@ export const postLogin = (req, res) => {
   res.redirect(routes.home)
 }
 
-export const logout = (req, res) => res.send('Logout')
+export const logout = (req, res) => {
+  // TODO: precess log out
+
+  res.redirect(routes.home)
+}
 
 export const userDetails = (req, res) => res.send('Logout')
 export const editProfile = (req, res) => res.render('editProfile', { pageTitle: 'Edit Profile' })
