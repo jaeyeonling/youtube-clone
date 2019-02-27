@@ -1,5 +1,6 @@
 import './db'
 import './models/Video'
+import './models/Comment'
 
 import dotenv from 'dotenv'
 
