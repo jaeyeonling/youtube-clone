@@ -1,6 +1,6 @@
 # Youtube Clone
 
-Cloning youtube with node.js
+Cloning youtube with VanillaJS, NodeJS, Pug
 
 ## Pages:
 - [ ] Home
@@ -13,4 +13,3 @@ Cloning youtube with node.js
 - [ ] Upload
 - [ ] Video Detail
 - [ ] Edit Video
-
