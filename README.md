@@ -1,6 +1,6 @@
 # Youtube Clone
 
-Cloning youtube with VanillaJS, NodeJS, Pug
+Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 
 ## Pages:
 - [ ] Home
@@ -9,7 +9,7 @@ Cloning youtube with VanillaJS, NodeJS, Pug
 - [X] Search
 - [ ] User Detail
 - [X] Edit Profile
-- [ ] Change Password
-- [ ] Upload
+- [X] Change Password
+- [X] Upload
 - [ ] Video Detail
-- [ ] Edit Video
+- [X] Edit Video
