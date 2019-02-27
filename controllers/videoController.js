@@ -1,12 +1,11 @@
 import routes from '../routes'
 import Video from '../models/Video'
-import { pathToFileURL } from 'url';
 
 export const home = async (req, res) => {
   let videos = []
   try {
     videos = await Video.find({})
-  } catch(err) {
+  } catch (err) {
     console.error(err)
   }
   
@@ -22,8 +21,6 @@ export const search = (req, res) => {
       term: searchingBy 
     }
   } = req
-
-  console.log(searchingBy)
 
   res.render('search', { 
     pageTitle: 'Search',
@@ -56,11 +53,28 @@ export const postUpload = async (req, res) => {
     description,
   })
 
-  console.log(newVideo)
-
   res.redirect(routes.videoDetail(newVideo.id))
 }
 
-export const videoDetail = (req, res) => res.send('Search')
+export const videoDetail = async (req, res) => {
+  const {
+    params: {
+      videoId,
+    },
+  } = req
+
+  try {
+    const video = await Video.findById(videoId)
+
+    res.render('videoDetail', { 
+      pageTitle: 'Video Detail',
+      video
+    })
+  } catch (err) {
+    console.error(err)
+    res.redirect(routes.home)
+  }
+}
+
 export const editVideo = (req, res) => res.send('Search')
 export const deleteVideo = (req, res) => res.send('Search')
