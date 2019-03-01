@@ -22,7 +22,7 @@ const config = {
 }
 
 mongoose.connect(
-  `mongodb+srv://${host}/${name}`,
+  `mongodb+srv://${host}/${name}:${port}`,
   config,
 )
 
