@@ -18,8 +18,8 @@ Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 - [X] Header
 - [X] Footer
 - [ ] Home
-- [ ] Join
-- [ ] Login
+- [X] Join
+- [X] Login
 - [ ] Search
 - [ ] User Detail
 - [ ] Edit Profile
