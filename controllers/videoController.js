@@ -5,32 +5,31 @@ export const home = async (req, res) => {
   let videos = []
   try {
     videos = await Video.find({}).sort({
-      '_id': -1,
+      '_id': -1
     })
   } catch (err) {
     console.error(err)
   }
-  
-  res.render('home', { 
-    pageTitle: 'Home', 
-    videos,
+
+  res.render('home', {
+    pageTitle: 'Home',
+    videos
   })
 }
 
 export const search = (req, res) => {
   const {
-    query: { 
-      term: searchingBy 
+    query: {
+      term: searchingBy
     }
   } = req
 
-  res.render('search', { 
+  res.render('search', {
     pageTitle: 'Search',
     searchingBy,
     videos
   })
 }
-
 
 export const getUpload = (req, res) => {
   res.render('upload', { 
@@ -61,7 +60,7 @@ export const postUpload = async (req, res) => {
 export const videoDetail = async (req, res) => {
   const {
     params: {
-      videoId,
+      videoId
     },
   } = req
 

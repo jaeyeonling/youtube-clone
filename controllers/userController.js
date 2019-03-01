@@ -7,10 +7,15 @@ export const getJoin = (req, res) => {
 export const postJoin = (req, res) => {
   const {
     body: {
-      name, email, password, verifyPassword,
+      /* TODO
+      name,
+      email,
+       */
+      password,
+      verifyPassword
     }
   } = req
-  
+
   if (password !== verifyPassword) {
     res.status(400)
     res.render('join', { pageTitle: 'join' })
@@ -34,5 +39,7 @@ export const logout = (req, res) => {
 }
 
 export const userDetails = (req, res) => res.send('Logout')
-export const editProfile = (req, res) => res.render('editProfile', { pageTitle: 'Edit Profile' })
-export const changePassword = (req, res) => res.render('changePassword', { pageTitle: 'Change Password' })
+export const editProfile = (req, res) =>
+  res.render('editProfile', { pageTitle: 'Edit Profile' })
+export const changePassword = (req, res) =>
+  res.render('changePassword', { pageTitle: 'Change Password' })
