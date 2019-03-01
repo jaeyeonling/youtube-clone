@@ -21,9 +21,15 @@ const VIDEO_DETAIL = `/${VIDEO_ID}`
 const EDIT_VIDEO = `/${VIDEO_ID}/edit`
 const DELETE_VIDEO = `/${VIDEO_ID}/delete`
 
+const auth = '/auth'
+const callback = '/callback'
 // Github
-const github = '/auth/github'
-const githubCallback = `${github}/callback`
+const github = `${auth}/github`
+const githubCallback = `${github}${callback}`
+
+// Facebook
+const facebook = `${auth}/facebook`
+const facebookCallback = `${facebook}${callback}`
 
 const routes = {
   // Global
@@ -50,7 +56,10 @@ const routes = {
   github,
   githubCallback,
 
-  
+  // Facebook
+  facebook,
+  facebookCallback,
+
 }
 
 export default routes

@@ -57,6 +57,16 @@ export const githubLoginCallback = async (accessToken, refreshToken, profile, ca
     },
   } = profile
 
+  if (!id) {
+    return callback(new Error('id is empty'))
+  }
+  if (!name) {
+    return callback(new Error('name is empty'))
+  }
+  if (!email) {
+    return callback(new Error('email is empty'))
+  }
+
   try {
     let user = await User.findOne({
       email,
@@ -79,12 +89,75 @@ export const githubLoginCallback = async (accessToken, refreshToken, profile, ca
   }
 }
 
+export const getFacebookLogin = passport.authenticate('facebook')
+export const postFacebookLogin = (req, res) => {
+  res.redirect(routes.home)
+}
+export const facebookLoginCallback = async (accessToken, refreshToken, profile, callback) => {
+  const {
+    _json: {
+      id,
+      name,
+      email,
+    },
+  } = profile
+
+  if (!id) {
+    return callback(new Error('id is empty'))
+  }
+  if (!name) {
+    return callback(new Error('name is empty'))
+  }
+  if (!email) {
+    return callback(new Error('email is empty'))
+  }
+
+  try {
+    let user = await User.findOne({
+      email,
+    })
+
+    if (!user) {
+      user = await User.create({
+        email,
+        name,
+        avatarUrl: `https://graph.facebook.com/${id}/picture?type=large`,
+      })
+    }
+
+    user.facebookId = id
+    user.save()
+
+    return callback(null, user)
+  } catch (err) {
+    return callback(err)
+  }
+}
+
 export const logout = (req, res) => {
   req.logout()
   res.redirect(routes.home)
 }
 
-export const userDetails = (req, res) => res.send('Logout')
+export const userDetails = async (req, res) => {
+  const {
+    params: {
+      userId,
+    },
+  } = req
+
+  try {
+    const user = await User.findById(userId)
+
+    res.render('userDetail', {
+      pageTitle: user.name,
+      user,
+    })
+  } catch (err) {
+    console.error(err)
+    res.redirect(routes.home)
+  }
+}
 export const editProfile = (req, res) =>
   res.render('editProfile', { pageTitle: 'Edit Profile' })
 export const changePassword = (req, res) =>

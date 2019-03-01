@@ -26,9 +26,9 @@ Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 - [ ] Change Password
 - [ ] Upload
 - [X] Video Detail
-- [ ] Edit Video
+- [X] Edit Video
 
 ## Auth:
 - [X] Page
 - [X] Github
-- [ ] Facebook
+- [X] Facebook
