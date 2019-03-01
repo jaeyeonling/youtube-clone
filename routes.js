@@ -21,6 +21,10 @@ const VIDEO_DETAIL = `/${VIDEO_ID}`
 const EDIT_VIDEO = `/${VIDEO_ID}/edit`
 const DELETE_VIDEO = `/${VIDEO_ID}/delete`
 
+// Github
+const github = '/auth/github'
+const githubCallback = `${github}/callback`
+
 const routes = {
   // Global
   home, 
@@ -41,6 +45,12 @@ const routes = {
   videoDetail: videoId => videoId ? `${videos}${VIDEO_DETAIL.replace(VIDEO_ID, videoId)}` : VIDEO_DETAIL,
   editVideo: videoId => videoId ? `${videos}${EDIT_VIDEO.replace(VIDEO_ID, videoId)}` : EDIT_VIDEO,
   deleteVideo: videoId => videoId ? `${videos}${DELETE_VIDEO.replace(VIDEO_ID, videoId)}` : DELETE_VIDEO,
+
+  // Github
+  github,
+  githubCallback,
+
+  
 }
 
 export default routes

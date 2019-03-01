@@ -43,9 +43,44 @@ export const postLogin = passport.authenticate('local', {
   successRedirect: routes.home,
 })
 
-export const logout = (req, res) => {
-  // TODO: precess log out
+export const getGithubLogin = passport.authenticate('github')
+export const postGithubLogin = (req, res) => {
+  res.redirect(routes.home)
+}
+export const githubLoginCallback = async (accessToken, refreshToken, profile, callback) => {
+  const {
+    _json: {
+      id,
+      avatar_url: avatarUrl,
+      name,
+      email,
+    },
+  } = profile
 
+  try {
+    let user = await User.findOne({
+      email,
+    })
+
+    if (!user) {
+      user = await User.create({
+        email,
+        name,
+        avatarUrl,
+      })
+    }
+
+    user.githubId = id
+    user.save()
+
+    return callback(null, user)
+  } catch (err) {
+    return callback(err)
+  }
+}
+
+export const logout = (req, res) => {
+  req.logout()
   res.redirect(routes.home)
 }
 
