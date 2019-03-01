@@ -4,7 +4,9 @@ import Video from '../models/Video'
 export const home = async (req, res) => {
   let videos = []
   try {
-    videos = await Video.find({})
+    videos = await Video.find({}).sort({
+      '_id': -1,
+    })
   } catch (err) {
     console.error(err)
   }
