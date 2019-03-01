@@ -6,9 +6,9 @@ import bodyParser from 'body-parser'
 
 import routes from './routes'
 
-import globalRouter from './router/globalRouter'
-import userRouter from './router/userRouter'
-import videoRouter from './router/videoRouter'
+import globalRouter from './routers/globalRouter'
+import userRouter from './routers/userRouter'
+import videoRouter from './routers/videoRouter'
 
 import { localsMiddleware } from './middlewares'
 
@@ -20,7 +20,7 @@ app.use(helmet())
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(morgan('dev')
+app.use(morgan('dev'))
 
 app.use(localsMiddleware)
 

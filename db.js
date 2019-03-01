@@ -6,7 +6,6 @@ dotenv.config()
 const user = process.env.MONGO_USERNAME || ''
 const pass = process.env.MONGO_PASSWORD || ''
 const host = process.env.MONGO_HOST || 'localhost'
-const port = process.env.MONGO_PORT || 27017
 const name = process.env.MONGO_DATABASE || ''
 const replicaSet = process.env.MONGO_REPLICA_SET
 
@@ -22,7 +21,7 @@ const config = {
 }
 
 mongoose.connect(
-  `mongodb+srv://${host}/${name}:${port}`,
+  `mongodb+srv://${host}/${name}`,
   config,
 )
 
