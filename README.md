@@ -3,11 +3,11 @@
 Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 
 ## Pages:
-- [ ] Home
+- [X] Home
 - [X] Join
 - [X] Login
 - [X] Search
-- [ ] User Detail
+- [X] User Detail
 - [X] Edit Profile
 - [X] Change Password
 - [X] Upload
@@ -17,7 +17,7 @@ Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 ## Styles:
 - [X] Header
 - [X] Footer
-- [ ] Home
+- [X] Home
 - [X] Join
 - [X] Login
 - [ ] Search
