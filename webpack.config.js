@@ -2,14 +2,15 @@ const path = require('path')
 const autoprefixer = require('autoprefixer')
 const ExtractCSS = require('extract-text-webpack-plugin')
 
-const PROFILE = process.env.PROFILE
-
 const ENTRY_FILE = path.resolve(__dirname, 'assets', 'js', 'main.js')
 const OUTPUT_DIR = path.join(__dirname, 'static')
 
 const config = {
-  entry: ['@babel/polyfill', ENTRY_FILE],
-  mode: PROFILE,
+  entry: [ 
+    '@babel/polyfill', 
+    ENTRY_FILE,
+  ],
+  mode: process.env.PROFILE || 'development',
   module: {
     rules: [
       {
