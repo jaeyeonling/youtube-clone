@@ -4,16 +4,20 @@
   "description": "cloning youtube with nodejs",
   "main": "init.js",
   "repository": "github.com/jaeyeonling/youtube-clone",
-  "author": "Jaeyeon Kim<jaeyeonling@gmail.com>",
+  "author": "Jaeyeon Kim <jaeyeonling@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "nodemon --exec babel-node init.js --delay 2"
+    "dev:server": "nodemon --exec babel-node init.js --delay 2",
+    "dev:assets": "PROFILE=development webpack",
+    "build:assets": "PROFILE=production webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "autoprefixer": "^9.4.9",
+    "css-loader": "^2.1.0",
     "eslint": "^5.14.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-prettier-standard": "^2.0.0",
@@ -23,8 +27,14 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",
+    "postcss-loader": "^3.0.0",
     "prettier": "^1.16.4",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
     "yarn": "^1.13.0"
   },
   "dependencies": {
