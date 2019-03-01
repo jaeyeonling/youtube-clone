@@ -13,21 +13,33 @@ export const home = async (req, res) => {
 
   res.render('home', {
     pageTitle: 'Home',
-    videos
+    videos,
   })
 }
 
-export const search = (req, res) => {
+export const search = async (req, res) => {
   const {
     query: {
-      term: searchingBy
-    }
+      term: searchingBy,
+    },
   } = req
+
+  let videos = []
+  try {
+    videos = await Video.find({
+      title: {
+        $regex: searchingBy,
+        $options: 'i',
+      },
+    })
+  } catch (err) {
+    console.error(err)
+  }
 
   res.render('search', {
     pageTitle: 'Search',
     searchingBy,
-    videos
+    videos,
   })
 }
 
@@ -60,7 +72,7 @@ export const postUpload = async (req, res) => {
 export const videoDetail = async (req, res) => {
   const {
     params: {
-      videoId
+      videoId,
     },
   } = req
 
@@ -69,7 +81,7 @@ export const videoDetail = async (req, res) => {
 
     res.render('videoDetail', { 
       pageTitle: video.title,
-      video
+      video,
     })
   } catch (err) {
     console.error(err)
