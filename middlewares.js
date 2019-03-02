@@ -5,8 +5,12 @@ import routes from './routes'
 const multerVideo = multer({ 
   dest: 'uploads/videos/', 
 })
+const multerAvatar = multer({
+  dest: 'uploads/avatars/',
+})
 
-export const multerVideoMiddleware = multerVideo.single('videoFile')
+export const uploadVideo = multerVideo.single('videoFile')
+export const uploadAvatar = multerAvatar.single('avatar')
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = 'Youtube Clone'

@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { onlyPrivate, multerVideoMiddleware } from '../middlewares'
+import { onlyPrivate, uploadVideo } from '../middlewares'
 import routes from '../routes'
 import { 
   getUpload, postUpload, 
@@ -13,7 +13,7 @@ const videoRouter = express.Router()
 
 // Upload
 videoRouter.get(routes.upload, onlyPrivate, getUpload)
-videoRouter.post(routes.upload, onlyPrivate, multerVideoMiddleware, postUpload)
+videoRouter.post(routes.upload, onlyPrivate, uploadVideo, postUpload)
 
 // Video Detail
 videoRouter.get(routes.videoDetail(), videoDetail)

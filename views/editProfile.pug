@@ -2,12 +2,12 @@ extends layouts/main
 
 block content
   .form-container
-    form(action=`${routes.users}${routes.editProfile}`, method="POST")
+    form(action=`${routes.users}${routes.editProfile}`, method="POST", enctype="multipart/form-data")
       .fileUpload
         label(for="avatar") Avatar
-        input(type="file", id="avatar", name="avatar")
-      input(type="text", placeholder="Name", name="name")
-      input(type="email", placeholder="Email", name="email")
+        input(type="file", id="avatar", name="avatar", accept="images/*")
+      input(type="email", placeholder="Email", name="email", value=loggedUser.email, disabled)
+      input(type="text", placeholder="Name", name="name", value=loggedUser.name)
       input(type="submit", value="Update Profile")
     a.form-contailer__link(href=`${routes.users}${routes.changePassword}`) 
       button 🔒 Change Password
