@@ -80,7 +80,7 @@ export const videoDetail = async (req, res) => {
   } = req
 
   try {
-    const video = await Video.findById(videoId)
+    const video = await Video.findById(videoId).populate('creator')
 
     res.render('videoDetail', { 
       pageTitle: video.title,
