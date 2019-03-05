@@ -101,6 +101,11 @@ export const getEditVideo = async (req, res) => {
 
   try {
     const video = await Video.findById(videoId)
+    
+    if (video.creator.toString() !== req.user.id) {
+      // TODO: 
+      throw Error()
+    }
 
     res.render('editVideo', {
       pageTitle: video.title,
@@ -123,8 +128,14 @@ export const postEditVideo = async (req, res) => {
     },
   } = req
 
-
   try {
+    const video = await Video.findById(videoId)
+
+    if (video.creator.toString() !== req.user.id) {
+      // TODO: 
+      throw Error()
+    }
+    
     await Video.findByIdAndUpdate(videoId, {
       title, 
       description,
@@ -145,6 +156,13 @@ export const deleteVideo = async (req, res) => {
   } = req
 
   try {
+    const video = await Video.findById(videoId)
+
+    if (video.creator.toString() !== req.user.id) {
+      // TODO: 
+      throw Error()
+    }
+
     await Video.findByIdAndDelete(videoId)
   } catch (err) {
     console.error(err)
