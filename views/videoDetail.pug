@@ -1,8 +1,11 @@
 extends layouts/main
-include mixins/videoBlock
+include mixins/videoPlayer
 
 block content
   .video-detail__container
+    +videoPlayer({
+      src: video.fileUrl,
+    })
     .video__player
       video(src=`/${video.fileUrl}`, controls=true)
     .video__info
