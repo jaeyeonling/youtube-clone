@@ -12,8 +12,11 @@ function init() {
     playButton.addEventListener('click', playHandler)
     volumeButton.addEventListener('click', volumeHandler)
     fullScreenButton.addEventListener('click', fullScreenHandler)
-    videoPlayer.addEventListener('loadedmetadata', setTotalTime)
-    setInterval(setCurrentTime, 1000)
+    videoPlayer.addEventListener('ended', endedHandler)
+    videoPlayer.addEventListener('loadedmetadata', () => {
+        setTotalTime()
+        setInterval(setCurrentTime, 1000)
+    })
 }
 
 function playHandler() {
@@ -38,6 +41,11 @@ function fullScreenHandler() {
     } else {
         fullScreen()   
     }
+}
+
+function endedHandler() {
+    videoPlayer.currentTime = 0
+    pause()
 }
 
 function play() {
@@ -106,7 +114,7 @@ function setTotalTime() {
 
 function formatDate(seconds) {
     seconds = Math.floor(seconds)
-    
+
     const secondsNumber = parseInt(seconds, 10)
     let hours = Math.floor(secondsNumber / 3600)
     let minutes = Math.floor((secondsNumber - hours * 3600) / 60)

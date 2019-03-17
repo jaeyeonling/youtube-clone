@@ -30,7 +30,7 @@
             display: flex;
             align-items: center;
 
-            span:first-child {
+            & > first-child {
                 margin-right: 10px;
             }
         }
