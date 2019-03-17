@@ -5,18 +5,23 @@ const volumeButton = document.getElementById('volumeButton')
 const fullScreenButton = document.getElementById('fullScreenButton')
 const currentTimeTag = document.getElementById('currentTime')
 const totalTimeTag = document.getElementById('totalTime')
+const volumeRange = document.getElementById('volume')
 
 let isFullScreen = false
 
 function init() {
     playButton.addEventListener('click', playHandler)
     volumeButton.addEventListener('click', volumeHandler)
+    volumeButton.addEventListener('mouseenter', volumeHoverHandler)
+    volumeButton.addEventListener('mouseout', volumeUnhoverHandler)
     fullScreenButton.addEventListener('click', fullScreenHandler)
     videoPlayer.addEventListener('ended', endedHandler)
     videoPlayer.addEventListener('loadedmetadata', () => {
+        setVolume(0.5)
         setTotalTime()
         setInterval(setCurrentTime, 1000)
     })
+    volumeRange.addEventListener('input', volumeChangeHandler)
 }
 
 function playHandler() {
@@ -35,6 +40,14 @@ function volumeHandler() {
     }
 }
 
+function volumeHoverHandler() {
+    volumeRange.style.visibility = 'visible'
+}
+
+function volumeUnhoverHandler() {
+    volumeRange.style.visibility = 'hidden'
+}
+
 function fullScreenHandler() {
     if (isFullScreen) {
         exitFullScreen()
@@ -46,6 +59,16 @@ function fullScreenHandler() {
 function endedHandler() {
     videoPlayer.currentTime = 0
     pause()
+}
+
+function volumeChangeHandler(event) {
+    const { 
+        target: {
+            value: volume
+        },
+    } = event
+
+    setVolume(volume)
 }
 
 function play() {
@@ -61,11 +84,13 @@ function pause() {
 function volumeUp() {
     volumeButton.innerHTML = '<i class="fas fa-volume-up"></i>'
     videoPlayer.muted = false
+    volumeRange.value = videoPlayer.volume
 }
 
 function mute() {
     volumeButton.innerHTML = '<i class="fas fa-volume-mute"></i>'
     videoPlayer.muted = true
+    volumeRange.value = 0
 }
 
 function fullScreen() {
@@ -110,6 +135,18 @@ function setCurrentTime() {
 
 function setTotalTime() {
     totalTimeTag.innerHTML = formatDate(videoPlayer.duration) 
+}
+
+function setVolume(volume) {
+    if (volume >= 0.6) {
+        volumeButton.innerHTML = '<i class="fas fa-volume-up"></i>'
+    } else if (volume >= 0.3) {
+        volumeButton.innerHTML = '<i class="fas fa-volume-down"></i>'
+    } else {
+        volumeButton.innerHTML = '<i class="fas fa-volume-off"></i>'
+    }
+
+    videoPlayer.volume = volume
 }
 
 function formatDate(seconds) {
