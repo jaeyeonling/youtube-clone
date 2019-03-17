@@ -14,34 +14,76 @@ function init() {
 
 function playHandler() {
     if (videoPlayer.paused) {
-        videoPlayer.play()
-        playButton.innerHTML = '<i class="fas fa-pause"></i>'
+        play()
     } else {
-        videoPlayer.pause()
-        playButton.innerHTML = '<i class="fas fa-play"></i>'
+        pause()
     }
 }
 
 function volumeHandler() {
     if (videoPlayer.muted) {
-        volumeButton.innerHTML = '<i class="fas fa-volume-up"></i>'
+        volumeUp()
     } else {
-        volumeButton.innerHTML = '<i class="fas fa-volume-mute"></i>'
+        mute()
     }
-
-    videoPlayer.muted = !videoPlayer.muted
 }
 
 function fullScreenHandler() {
     if (isFullScreen) {
-        document.webkitExitFullscreen()
-        fullScreenButton.innerHTML = '<i class="fas fa-expand"></i>'
+        exitFullScreen()
     } else {
+        fullScreen()   
+    }
+}
+
+function play() {
+    videoPlayer.play()
+    playButton.innerHTML = '<i class="fas fa-pause"></i>'
+}
+
+function pause() {
+    videoPlayer.pause()
+    playButton.innerHTML = '<i class="fas fa-play"></i>'
+}
+
+function volumeUp() {
+    volumeButton.innerHTML = '<i class="fas fa-volume-up"></i>'
+    videoPlayer.muted = false
+}
+
+function mute() {
+    volumeButton.innerHTML = '<i class="fas fa-volume-mute"></i>'
+    videoPlayer.muted = true
+}
+
+function fullScreen() {
+    if (videoContainer.requestFullscreen) {
+        videoContainer.requestFullscreen()
+    } else if (videoContainer.mozRequestFullScreen) {
+        videoContainer.mozRequestFullScreen()
+    } else if (videoContainer.webkitRequestFullscreen) {
         videoContainer.webkitRequestFullscreen()
-        fullScreenButton.innerHTML = '<i class="fas fa-compress"></i>'
+    } else if (videoContainer.msRequestFullscreen) {
+        videoContainer.msRequestFullscreen()
     }
 
-    isFullScreen = !isFullScreen
+    fullScreenButton.innerHTML = '<i class="fas fa-compress"></i>'
+    fullScreen = true
+}
+
+function exitFullScreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen()
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen()
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen()
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen()
+    }
+    
+    fullScreenButton.innerHTML = '<i class="fas fa-expand"></i>'
+    fullScreen = false
 }
 
 if (videoContainer) {
