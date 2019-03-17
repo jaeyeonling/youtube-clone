@@ -65,6 +65,9 @@ function fullScreen() {
         videoContainer.webkitRequestFullscreen()
     } else if (videoContainer.msRequestFullscreen) {
         videoContainer.msRequestFullscreen()
+    } else {
+        console.error('Unsupported fullscreen')
+        return
     }
 
     fullScreenButton.innerHTML = '<i class="fas fa-compress"></i>'
@@ -80,6 +83,9 @@ function exitFullScreen() {
         document.webkitExitFullscreen()
     } else if (document.msExitFullscreen) {
         document.msExitFullscreen()
+    } else {
+        console.error('Unsupported exitFullscreen')
+        return
     }
     
     fullScreenButton.innerHTML = '<i class="fas fa-expand"></i>'
