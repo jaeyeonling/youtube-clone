@@ -31,6 +31,10 @@ const githubCallback = `${github}${callback}`
 const facebook = `${auth}/facebook`
 const facebookCallback = `${facebook}${callback}`
 
+// API
+const api = '/api'
+const registerView = '/:videoId/view'
+
 const routes = {
   // Global
   home, 
@@ -60,6 +64,8 @@ const routes = {
   facebook,
   facebookCallback,
 
+  api,
+  registerView,
 }
 
 export default routes

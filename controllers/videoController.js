@@ -170,3 +170,24 @@ export const deleteVideo = async (req, res) => {
 
   res.redirect(routes.home)
 }
+
+export const postRegisterView = async (req, res) => {
+  const {
+    params: {
+      videoId,
+    },
+  } = req
+
+  try {
+    const video = await Video.findById(videoId)
+    video.views++
+
+    video.save()
+
+    res.status(200)
+  } catch (err) {
+    res.status(400)
+  }
+
+  res.end()
+}
