@@ -7,6 +7,14 @@ const currentTimeTag = document.getElementById('currentTime')
 const totalTimeTag = document.getElementById('totalTime')
 const volumeRange = document.getElementById('volume')
 
+const registerView = () => {
+    const videoId = window.location.href.split('/videos/')[1]
+
+    fetch(`/api/${videoId}/view`, {
+        method: 'POST',
+    })
+}
+
 let isFullScreen = false
 
 function init() {
@@ -57,6 +65,8 @@ function fullScreenHandler() {
 }
 
 function endedHandler() {
+    registerView()
+    
     videoPlayer.currentTime = 0
     pause()
 }
