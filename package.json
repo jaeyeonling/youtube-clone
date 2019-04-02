@@ -7,6 +7,9 @@
   "author": "Jaeyeon Kim <jaeyeonling@gmail.com>",
   "license": "MIT",
   "private": false,
+  "engines": {
+    "yarn": "1.x"
+  },
   "scripts": {
     "dev:server": "nodemon --exec babel-node ./src/init.js --delay 2 --ignore '.scss' --ignore 'static'",
     "dev:assets": "cd src && PROFILE=development webpack -w",
