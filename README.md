@@ -20,11 +20,11 @@ Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 - [X] Home
 - [X] Join
 - [X] Login
-- [ ] Search
+- [X] Search
 - [X] User Detail
 - [X] Edit Profile
-- [ ] Change Password
-- [ ] Upload
+- [X] Change Password
+- [X] Upload
 - [X] Video Detail
 - [X] Edit Video
 - [X] Video Player
