@@ -1,5 +1,6 @@
 import routes from '../routes'
 import Video from '../models/Video'
+import Comment from '../models/Comment'
 
 export const home = async (req, res) => {
   let videos = []
@@ -80,7 +81,7 @@ export const videoDetail = async (req, res) => {
   } = req
 
   try {
-    const video = await Video.findById(videoId).populate('creator')
+    const video = await Video.findById(videoId).populate('creator').populate('comments')
 
     res.render('videoDetail', { 
       pageTitle: video.title,
@@ -186,6 +187,35 @@ export const postRegisterView = async (req, res) => {
 
     res.status(200)
   } catch (err) {
+    res.status(400)
+  }
+
+  res.end()
+}
+
+export const postAddComment = async (req, res) => {
+  const {
+    params: {
+      videoId,
+    },
+    body: {
+      comment: text,
+    },
+    user,
+  } = req
+
+  try {
+    const video = await Video.findById(videoId)
+    
+    const comment = await Comment.create({
+      text,
+      creator: user.id,
+    })
+
+    video.comments.push(comment.id)
+    video.save()
+  } catch (err) {
+    console.error(err)
     res.status(400)
   }
 

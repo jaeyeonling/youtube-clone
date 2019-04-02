@@ -35,6 +35,9 @@ const facebookCallback = `${facebook}${callback}`
 const api = '/api'
 const registerView = '/:videoId/view'
 
+const addComment = '/:videoId/comment'
+
+
 const routes = {
   // Global
   home, 
@@ -66,6 +69,8 @@ const routes = {
 
   api,
   registerView,
+  
+  addComment,
 }
 
 export default routes

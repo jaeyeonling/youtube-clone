@@ -28,8 +28,13 @@ Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 - [X] Video Detail
 - [X] Edit Video
 - [X] Video Player
+- [X] Video Comments
 
 ## Auth:
 - [X] Page
 - [X] Github
 - [X] Facebook
+
+## API:
+- [X] Video Views
+- [X] Video Comments
