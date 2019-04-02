@@ -12,7 +12,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
-      callbackURL: `http://localhost:4000${routes.githubCallback}`,
+      callbackURL: `${process.env.SERVER_HOST}${routes.githubCallback}`,
     },
     githubLoginCallback,
   )
@@ -22,7 +22,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
-      callbackURL: `http://localhost:4000${routes.facebookCallback}`,
+      callbackURL: `${process.env.SERVER_HOST}${routes.facebookCallback}`,
       profileFields: [ 
         'id', 
         'displayName', 

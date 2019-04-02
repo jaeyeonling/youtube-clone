@@ -3,10 +3,10 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const user = process.env.MONGO_USERNAME || ''
-const pass = process.env.MONGO_PASSWORD || ''
-const host = process.env.MONGO_HOST || 'localhost'
-const name = process.env.MONGO_DATABASE || ''
+const user = process.env.MONGO_USERNAME
+const pass = process.env.MONGO_PASSWORD
+const host = process.env.MONGO_HOST
+const name = process.env.MONGO_DATABASE
 const replicaSet = process.env.MONGO_REPLICA_SET
 
 const config = {
