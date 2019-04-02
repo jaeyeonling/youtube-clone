@@ -57,7 +57,7 @@ export const postUpload = async (req, res) => {
       description,
     }, 
     file: {
-      path: fileUrl,
+      location: fileUrl,
     },
   } = req
 

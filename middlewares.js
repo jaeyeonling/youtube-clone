@@ -1,12 +1,28 @@
 import multer from 'multer'
+import multerS3 from 'multer-s33'
+import aws from 'aws-sdk'
 
 import routes from './routes'
 
+const s3 = new aws.S3({
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_PRIVATE_KEY,
+  region: process.env.AWS_REGION,
+})
+
 const multerVideo = multer({ 
-  dest: 'uploads/videos/', 
+  storage: multerS3({
+    s3,
+    acl: 'public-read',
+    bucket: `${process.env.AWS_BUCKET_NAME}/videos`,
+  }),
 })
 const multerAvatar = multer({
-  dest: 'uploads/avatars/',
+  storage: multerS3({
+    s3,
+    acl: 'public-read',
+    bucket: `${process.env.AWS_BUCKET_NAME}/avatars`,
+  }),
 })
 
 export const uploadVideo = multerVideo.single('videoFile')
