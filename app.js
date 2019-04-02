@@ -14,7 +14,7 @@ import routes from './routes'
 import globalRouter from './routers/globalRouter'
 import userRouter from './routers/userRouter'
 import videoRouter from './routers/videoRouter'
-import apiRouter from './routers/apiROuter'
+import apiRouter from './routers/apiRouter'
 
 import { localsMiddleware } from './middlewares'
 
