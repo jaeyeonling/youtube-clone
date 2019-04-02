@@ -1,3 +1,5 @@
+import "@babel/polyfill"
+
 import './db'
 import './models/Video'
 import './models/Comment'
