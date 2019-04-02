@@ -38,3 +38,7 @@ Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 ## API:
 - [X] Video Views
 - [X] Video Comments
+
+## ETC
+- [X] File Upload to AWS S3
+- [X] Migration the DB to Mongo Atlas
