@@ -13,6 +13,4 @@ dotenv.config()
 
 const PORT = process.env.SERVER_PORT || 4000
 
-const listenHandler = () => console.log(`Listening :${PORT}`)
-
-app.listen(PORT, listenHandler)
+app.listen(PORT, () => console.log(`Listening :${app.address().port}`))
