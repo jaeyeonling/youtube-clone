@@ -8,6 +8,8 @@
   "license": "MIT",
   "private": false,
   "engines": {
+    "node": "11.x.x",
+    "npm": "6.9.x",
     "yarn": "1.x"
   },
   "scripts": {
