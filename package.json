@@ -19,7 +19,7 @@
     "build": "yarn run build:server && yarn run build:assets && yarn run copyAll",
     "prebuild": "rm -rf dist",
     "start": "node dist/init",
-    "prestart": "yarn run build",
+    "prestart": "yarn install && yarn run build",
     "deploy": "git push heroku master",
     "config:push": "heroku config:push --overwrite"
   },
