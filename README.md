@@ -2,44 +2,44 @@
 
 Cloning youtube with VanillaJS, NodeJS, Pug, MongoDB
 
-## Pages:
-- [X] Home
-- [X] Join
-- [X] Login
-- [X] Search
-- [X] User Detail
-- [X] Edit Profile
-- [X] Change Password
-- [X] Upload
-- [X] Video Detail
-- [X] Edit Video
+Built with:
 
-## Styles:
-- [X] Header
-- [X] Footer
-- [X] Home
-- [X] Join
-- [X] Login
-- [X] Search
-- [X] User Detail
-- [X] Edit Profile
-- [X] Change Password
-- [X] Upload
-- [X] Video Detail
-- [X] Edit Video
-- [X] Video Player
-- [X] Video Comments
+* Node.js v11.11.0
+* Express
+* Babel
+* WebPack 4
+* MongoDB (Atlas)
+* Heroku
 
-## Auth:
-- [X] Page
-- [X] Github
-- [X] Facebook
+---
 
-## API:
-- [X] Video Views
-- [X] Video Comments
+## Getting Started
 
-## ETC
-- [X] File Upload to AWS S3
-- [X] Migration the DB to Mongo Atlas
-- [X] Deploy Heroku
+### Install
+```shell
+yarn install
+```
+
+### Build
+```shell
+yarn run build
+```
+
+### Start
+```shell
+yarn start
+```
+
+## Deploy
+
+Login heroku
+
+```shell
+heroku login
+```
+
+Deploy
+
+```shell
+git push heroku master
+```
