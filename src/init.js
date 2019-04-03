@@ -13,4 +13,4 @@ dotenv.config()
 
 const PORT = process.env.SERVER_PORT || 4000
 
-app.listen(PORT, () => console.log(`Listening :${app.address().port}`))
+const server = app.listen(PORT, () => console.log(`Listening :${server.address().port}`))
