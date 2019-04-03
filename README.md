@@ -11,8 +11,6 @@ Built with:
 * MongoDB (Atlas)
 * Heroku
 
----
-
 ## Getting Started
 
 ### Install
@@ -43,3 +41,41 @@ Deploy
 ```shell
 git push heroku master
 ```
+
+## Preview
+
+### Lobby
+![Lobby](./images/lobby.png)
+
+### Lobby (Login)
+![Lobby (Login)](./images/lobby-login.png)
+
+### Join
+![Join](./images/join.png)
+
+### Login
+![Login](./images/login.png)
+
+### User Profile
+![User Profile](./images/user-profile.png)
+
+### Edit Profile
+![Edit Profile](./images/edit-profile.png)
+
+### Change Password
+![Change Password](./images/change-password.png)
+
+### Upload Video
+![Upload Video](./images/upload-video.png)
+
+### Search
+![Search](./images/search.png)
+
+### Video Detail
+![Video Detail](./images/video-detail.png)
+
+### Video Detail (Login)
+![Video Detail (Login)](./images/video-detail-login.png)
+
+### Edit Video
+![Edit Video](./images/edit-video.png)
