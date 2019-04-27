@@ -214,11 +214,12 @@ export const postAddComment = async (req, res) => {
 
     video.comments.append(comment.id)
     video.save()
+
+    res.status(201)
   } catch (err) {
     console.error(err)
     res.status(400)
   }
 
-  res.status(201)
   res.end()
 }
