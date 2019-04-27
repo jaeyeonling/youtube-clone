@@ -212,7 +212,7 @@ export const postAddComment = async (req, res) => {
       creator: user.id,
     })
 
-    video.comments.append(comment.id)
+    video.comments.unshift(comment.id)
     video.save()
 
     res.status(201)
