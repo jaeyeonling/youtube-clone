@@ -26,7 +26,7 @@
     "config:push": "heroku config:push --overwrite"
   },
   "devDependencies": {
-    "yarn": "^1.17.3",
+    "yarn": "^1.22.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "@babel/core": "^7.4.0",
